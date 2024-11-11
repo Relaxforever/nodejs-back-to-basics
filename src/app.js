@@ -4,12 +4,17 @@
 //const { getUserById} = require("./js-foundation/03-callbacks")
 //const { getUserById} = require("./js-foundation/04-arrow")
 
-const getPokemonById = require("./js-foundation/06-promises");
+//const getPokemonById = require("./js-foundation/06-promises");
+const { buildLogger } = require("./plugins");
 
-getPokemonById(4)
-  .then((pokemon) => console.log({ pokemon }))
-  .catch((err) => console.log({ err }))
-  .finally(() => console.log("Finalmente"));
+const logger = buildLogger("app.js");
+
+logger.log("Hola mundo");
+logger.error("Very badlo");
+// getPokemonById(4)
+//   .then((pokemon) => console.log({ pokemon }))
+//   .catch((err) => console.log({ err }))
+//   .finally(() => console.log("Finalmente"));
 
 // Referencia funcion factory y injeccion dependencia
 // const {buildMakePerson} = require('./js-foundation/05-factory')
